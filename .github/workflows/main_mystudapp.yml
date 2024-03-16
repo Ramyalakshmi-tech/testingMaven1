@@ -1,3 +1,6 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
 name: Build and deploy WAR app to Azure Web App - mystudapp
 
 on:
@@ -45,9 +48,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D92AC0F8E49A45ED8F9E4FA53FD89B05 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A425945AF57443E2A9D5B9C7F2375835 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_22AE7414DFC1420584481A5991B600DB }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_DE86A51DA555430699D2600A4DAE1B6A }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_684388222E444277971688361AF9C366 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_285253E041B54AF58F447873D6EA03B4 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -55,4 +58,5 @@ jobs:
         with:
           app-name: 'mystudapp'
           slot-name: 'Production'
-          package: ${{ github.workspace }}/java-app/*.war
+          package: '*.war'
+          
